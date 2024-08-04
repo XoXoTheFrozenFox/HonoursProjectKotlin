@@ -26,11 +26,10 @@ class Form2 : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_a -> {
-                    // Already on Form2, do nothing or handle as needed
+                    launchMainActivity()
                     true
                 }
                 R.id.nav_b -> {
-                    launchForm2() // Refresh or do nothing since already on Form2
                     true
                 }
                 R.id.nav_c -> {
@@ -42,8 +41,10 @@ class Form2 : AppCompatActivity() {
         }
     }
 
-    private fun launchForm2() {
-        // No action needed since already on Form2
+    private fun launchMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish() // Optional: Close current activity after launching MainActivity
     }
 
     private fun launchForm3() {
