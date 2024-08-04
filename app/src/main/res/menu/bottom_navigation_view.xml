@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_a"
+        android:icon="@drawable/quiz_1"
+        android:title="Quizzes" />
+    <item
+        android:id="@+id/nav_b"
+        android:icon="@drawable/baseline_cloud_24"
+        android:title="Background" />
+    <item
+        android:id="@+id/nav_c"
+        android:icon="@drawable/baseline_assessment_24"
+        android:title="Conclusion" />
+</menu>
