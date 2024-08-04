@@ -4,23 +4,13 @@
     "questionList": [
       {
         "correct": "Phishing",
-        "options": [
-          "Phishing",
-          "Malware",
-          "Spyware",
-          "Ransomware"
-        ],
-        "question": "What type of cyber attack involves tricking individuals into disclosing sensitive information?"
+        "options": ["Phishing", "Malware", "Spyware", "Ransomware"],
+        "question": "What cyber attack involves tricking individuals into disclosing sensitive information?"
       },
       {
         "correct": "Firewall",
-        "options": [
-          "Antivirus",
-          "Firewall",
-          "VPN",
-          "Encryption"
-        ],
-        "question": "What is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules?"
+        "options": ["Antivirus", "Firewall", "VPN", "Encryption"],
+        "question": "What network security system monitors and controls incoming and outgoing network traffic?"
       }
     ],
     "subtitle": "Cyber Attack Types",
@@ -32,23 +22,13 @@
     "questionList": [
       {
         "correct": "Encryption",
-        "options": [
-          "Encryption",
-          "Hashing",
-          "Tokenization",
-          "Compression"
-        ],
-        "question": "What technique is used to secure data by converting it into a coded format that can only be decoded with a specific key?"
+        "options": ["Encryption", "Hashing", "Tokenization", "Compression"],
+        "question": "What technique secures data by converting it into a coded format?"
       },
       {
         "correct": "Two-Factor Authentication",
-        "options": [
-          "Password Protection",
-          "Two-Factor Authentication",
-          "Biometrics",
-          "Single Sign-On"
-        ],
-        "question": "Which security measure requires two forms of identification to access an account or system?"
+        "options": ["Password Protection", "Two-Factor Authentication", "Biometrics", "Single Sign-On"],
+        "question": "Which security measure requires two forms of identification?"
       }
     ],
     "subtitle": "Basic Security Concepts",
@@ -60,43 +40,23 @@
     "questionList": [
       {
         "correct": "VPN",
-        "options": [
-          "VPN",
-          "Proxy Server",
-          "Firewall",
-          "Antivirus"
-        ],
-        "question": "What technology is used to create a secure connection over a less secure network, such as the internet?"
+        "options": ["VPN", "Proxy Server", "Firewall", "Antivirus"],
+        "question": "What technology creates a secure connection over a less secure network?"
       },
       {
         "correct": "DDoS Attack",
-        "options": [
-          "Phishing Attack",
-          "DDoS Attack",
-          "SQL Injection",
-          "Man-in-the-Middle Attack"
-        ],
-        "question": "What type of cyber attack involves overwhelming a server or network with a flood of internet traffic?"
+        "options": ["Phishing Attack", "DDoS Attack", "SQL Injection", "Man-in-the-Middle Attack"],
+        "question": "What attack overwhelms a server with internet traffic?"
       },
       {
         "correct": "SQL Injection",
-        "options": [
-          "SQL Injection",
-          "Cross-Site Scripting",
-          "Buffer Overflow",
-          "Brute Force Attack"
-        ],
-        "question": "What vulnerability allows attackers to execute arbitrary SQL code on a database?"
+        "options": ["SQL Injection", "Cross-Site Scripting", "Buffer Overflow", "Brute Force Attack"],
+        "question": "What vulnerability allows attackers to execute arbitrary SQL code?"
       },
       {
         "correct": "Penetration Testing",
-        "options": [
-          "Penetration Testing",
-          "Vulnerability Scanning",
-          "Social Engineering",
-          "Incident Response"
-        ],
-        "question": "What is the process of testing a computer system, network, or web application to find security vulnerabilities?"
+        "options": ["Penetration Testing", "Vulnerability Scanning", "Social Engineering", "Incident Response"],
+        "question": "What process tests a system to find security vulnerabilities?"
       }
     ],
     "subtitle": "Cyber Attack Methods",
@@ -108,53 +68,28 @@
     "questionList": [
       {
         "correct": "Ransomware",
-        "options": [
-          "Adware",
-          "Ransomware",
-          "Trojan",
-          "Worm"
-        ],
-        "question": "What type of malware encrypts a user's files and demands a ransom for the decryption key?"
+        "options": ["Adware", "Ransomware", "Trojan", "Worm"],
+        "question": "What malware encrypts files and demands a ransom?"
       },
       {
         "correct": "Social Engineering",
-        "options": [
-          "Social Engineering",
-          "Phishing",
-          "Malware",
-          "Spyware"
-        ],
-        "question": "What method involves manipulating individuals into divulging confidential information by exploiting psychological factors?"
+        "options": ["Social Engineering", "Phishing", "Malware", "Spyware"],
+        "question": "What method manipulates individuals into divulging confidential information?"
       },
       {
         "correct": "Zero-Day Exploit",
-        "options": [
-          "Zero-Day Exploit",
-          "Cross-Site Scripting",
-          "Denial of Service",
-          "Privilege Escalation"
-        ],
-        "question": "What term refers to an attack that occurs before the vulnerability in software is known to the public or patched?"
+        "options": ["Zero-Day Exploit", "Cross-Site Scripting", "Denial of Service", "Privilege Escalation"],
+        "question": "What attack exploits a vulnerability before it is patched?"
       },
       {
         "correct": "Malware",
-        "options": [
-          "Malware",
-          "Phishing",
-          "Spam",
-          "Adware"
-        ],
-        "question": "What is the general term for malicious software designed to harm or exploit a system?"
+        "options": ["Malware", "Phishing", "Spam", "Adware"],
+        "question": "What is malicious software designed to harm a system?"
       },
       {
         "correct": "Ethical Hacking",
-        "options": [
-          "Penetration Testing",
-          "Ethical Hacking",
-          "Black Hat Hacking",
-          "White Hat Hacking"
-        ],
-        "question": "What term describes the practice of intentionally probing systems for vulnerabilities to improve security?"
+        "options": ["Penetration Testing", "Ethical Hacking", "Black Hat Hacking", "White Hat Hacking"],
+        "question": "What practice probes systems to improve security?"
       }
     ],
     "subtitle": "Cybersecurity Practices",
@@ -166,53 +101,28 @@
     "questionList": [
       {
         "correct": "Brute Force Attack",
-        "options": [
-          "Brute Force Attack",
-          "Phishing Attack",
-          "Man-in-the-Middle Attack",
-          "Social Engineering"
-        ],
-        "question": "What type of attack involves trying every possible password until the correct one is found?"
+        "options": ["Brute Force Attack", "Phishing Attack", "Man-in-the-Middle Attack", "Social Engineering"],
+        "question": "What attack involves trying every possible password?"
       },
       {
         "correct": "Public Key Infrastructure",
-        "options": [
-          "Public Key Infrastructure",
-          "Private Key Encryption",
-          "Symmetric Key Encryption",
-          "Token Authentication"
-        ],
-        "question": "What system uses a combination of hardware, software, and policies to manage digital certificates and public-key encryption?"
+        "options": ["Public Key Infrastructure", "Private Key Encryption", "Symmetric Key Encryption", "Token Authentication"],
+        "question": "What system manages digital certificates and public-key encryption?"
       },
       {
         "correct": "Man-in-the-Middle Attack",
-        "options": [
-          "Man-in-the-Middle Attack",
-          "SQL Injection",
-          "Cross-Site Scripting",
-          "Denial of Service"
-        ],
-        "question": "What type of attack involves intercepting and potentially altering communication between two parties without their knowledge?"
+        "options": ["Man-in-the-Middle Attack", "SQL Injection", "Cross-Site Scripting", "Denial of Service"],
+        "question": "What attack intercepts and alters communication between parties?"
       },
       {
         "correct": "Network Segmentation",
-        "options": [
-          "Network Segmentation",
-          "Network Isolation",
-          "Network Encryption",
-          "Network Monitoring"
-        ],
-        "question": "What practice involves dividing a network into multiple segments to improve security and control traffic?"
+        "options": ["Network Segmentation", "Network Isolation", "Network Encryption", "Network Monitoring"],
+        "question": "What practice divides a network into segments to control traffic?"
       },
       {
         "correct": "Two-Factor Authentication",
-        "options": [
-          "Single Sign-On",
-          "Two-Factor Authentication",
-          "Multi-Factor Authentication",
-          "Biometric Authentication"
-        ],
-        "question": "What security measure requires two separate forms of identification to access a system or account?"
+        "options": ["Single Sign-On", "Two-Factor Authentication", "Multi-Factor Authentication", "Biometric Authentication"],
+        "question": "What security measure requires two forms of identification?"
       }
     ],
     "subtitle": "Cybersecurity Essentials",
