@@ -39,9 +39,8 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:id="@+id/timer_indicator_textview"/>
-
-
     </RelativeLayout>
+
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,7 +50,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"
         android:elevation="4dp">
         <LinearLayout
@@ -73,6 +72,8 @@
                 android:gravity="center"
                 android:layout_marginVertical="8dp"
                 android:id="@+id/question_textview"/>
+
+            <!-- Options buttons -->
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,25 +131,15 @@
                 android:paddingHorizontal="40dp"
                 android:id="@+id/next_btn" />
 
-
-
-
+            <!-- Feedback TextView -->
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
-
-
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:id="@+id/feedback_textview"/>
 </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-

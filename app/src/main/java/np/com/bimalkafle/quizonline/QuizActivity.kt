@@ -1,7 +1,6 @@
 package np.com.bimalkafle.quizonline
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
@@ -9,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import np.com.bimalkafle.quizonline.databinding.ActivityQuizBinding
 import np.com.bimalkafle.quizonline.databinding.ScoreDialogBinding
 
@@ -21,15 +21,16 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var binding: ActivityQuizBinding
 
-    var currentQuestionIndex = 0
-    var selectedAnswer = ""
-    var score = 0
-    var isAnswerLocked = false
+    private var currentQuestionIndex = 0
+    private var selectedAnswer = ""
+    private var score = 0
+    private var isAnswerLocked = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.apply {
             btn0.setOnClickListener(this@QuizActivity)
             btn1.setOnClickListener(this@QuizActivity)
@@ -54,75 +55,83 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             override fun onFinish() {
-                // Finish the quiz
                 finishQuiz()
             }
         }.start()
     }
 
     private fun loadQuestions() {
-        if (currentQuestionIndex == questionModelList.size) {
+        if (currentQuestionIndex >= questionModelList.size) {
             finishQuiz()
             return
         }
+
+        val question = questionModelList[currentQuestionIndex]
 
         binding.apply {
             questionIndicatorTextview.text =
                 "Question ${currentQuestionIndex + 1}/ ${questionModelList.size} "
             questionProgressIndicator.progress =
                 (currentQuestionIndex.toFloat() / questionModelList.size.toFloat() * 100).toInt()
-            questionTextview.text = questionModelList[currentQuestionIndex].question
-            btn0.text = questionModelList[currentQuestionIndex].options[0]
-            btn1.text = questionModelList[currentQuestionIndex].options[1]
-            btn2.text = questionModelList[currentQuestionIndex].options[2]
-            btn3.text = questionModelList[currentQuestionIndex].options[3]
+            questionTextview.text = question.question
+            btn0.text = question.options[0]
+            btn1.text = question.options[1]
+            btn2.text = question.options[2]
+            btn3.text = question.options[3]
+            feedbackTextview.text = "" // Clear feedback on new question
         }
 
-        isAnswerLocked = false // Enable answer selection for the current question
-        resetButtonColors() // Reset button colors to default
+        isAnswerLocked = false
+        resetButtonColors()
     }
 
     override fun onClick(view: View?) {
-        if (isAnswerLocked && view?.id != R.id.next_btn) return // Prevent changes if answer is locked
+        if (view !is Button) return
 
-        val clickedBtn = view as Button
-        when (clickedBtn.id) {
-            R.id.next_btn -> {
-                // Next button is clicked
-                if (selectedAnswer.isEmpty()) {
-                    Toast.makeText(applicationContext, "Please select an answer to continue", Toast.LENGTH_SHORT).show()
-                    return
-                }
+        if (isAnswerLocked && view.id != R.id.next_btn) return
 
-                if (selectedAnswer == questionModelList[currentQuestionIndex].correct) {
-                    score++
-                    Log.i("Score of quiz", score.toString())
-                } else {
-                    highlightCorrectAnswer()
-                }
-                isAnswerLocked = true // Lock the selection
-                currentQuestionIndex++
-                loadQuestions()
-            }
-            else -> {
-                // Option button is clicked
-                handleOptionClick(clickedBtn)
-            }
+        when (view.id) {
+            R.id.next_btn -> handleNextButtonClick()
+            R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3 -> handleOptionClick(view)
         }
     }
 
-    private fun handleOptionClick(selectedButton: Button) {
-        if (isAnswerLocked) return // Do nothing if answer is locked
+    private fun handleNextButtonClick() {
+        if (selectedAnswer.isEmpty()) {
+            Toast.makeText(applicationContext, "Please select an answer to continue", Toast.LENGTH_SHORT).show()
+            return
+        }
 
+        if (selectedAnswer == questionModelList[currentQuestionIndex].correct) {
+            score++
+            Log.i("Score of quiz", score.toString())
+        } else {
+            highlightCorrectAnswer()
+        }
+
+        isAnswerLocked = true
+        currentQuestionIndex++
+        loadQuestions()
+    }
+
+    private fun handleOptionClick(view: View) {
+        if (isAnswerLocked) return
+
+        val selectedButton = view as Button
         selectedAnswer = selectedButton.text.toString()
         highlightSelectedAnswer(selectedButton)
+
         if (selectedAnswer == questionModelList[currentQuestionIndex].correct) {
             selectedButton.setBackgroundColor(getColor(R.color.green))
+            // Show feedback if the answer is correct
+            binding.feedbackTextview.text = "Feedback: " + questionModelList[currentQuestionIndex].feedback
         } else {
             selectedButton.setBackgroundColor(getColor(R.color.red))
             highlightCorrectAnswer()
+            // Show feedback if the answer is incorrect
+            binding.feedbackTextview.text = "Feedback: " + questionModelList[currentQuestionIndex].feedback
         }
-        isAnswerLocked = true // Lock the selection after choosing an answer
+        isAnswerLocked = true
     }
 
     private fun highlightSelectedAnswer(selectedButton: Button) {
@@ -138,27 +147,25 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun highlightCorrectAnswer() {
         val correctAnswer = questionModelList[currentQuestionIndex].correct
-        val correctButton = findViewById<Button>(
-            when (correctAnswer) {
+        val correctButtonId = when (correctAnswer) {
+            binding.btn0.text.toString() -> R.id.btn0
+            binding.btn1.text.toString() -> R.id.btn1
+            binding.btn2.text.toString() -> R.id.btn2
+            binding.btn3.text.toString() -> R.id.btn3
+            else -> R.id.btn0
+        }
+        val correctButton = findViewById<Button>(correctButtonId)
+        correctButton.setBackgroundColor(getColor(R.color.green))
+
+        if (selectedAnswer != correctAnswer) {
+            val selectedButtonId = when (selectedAnswer) {
                 binding.btn0.text.toString() -> R.id.btn0
                 binding.btn1.text.toString() -> R.id.btn1
                 binding.btn2.text.toString() -> R.id.btn2
                 binding.btn3.text.toString() -> R.id.btn3
                 else -> R.id.btn0
             }
-        )
-        correctButton.setBackgroundColor(getColor(R.color.green))
-
-        if (selectedAnswer != correctAnswer) {
-            val selectedButton = findViewById<Button>(
-                when (selectedAnswer) {
-                    binding.btn0.text.toString() -> R.id.btn0
-                    binding.btn1.text.toString() -> R.id.btn1
-                    binding.btn2.text.toString() -> R.id.btn2
-                    binding.btn3.text.toString() -> R.id.btn3
-                    else -> R.id.btn0
-                }
-            )
+            val selectedButton = findViewById<Button>(selectedButtonId)
             selectedButton.setBackgroundColor(getColor(R.color.red))
         }
     }

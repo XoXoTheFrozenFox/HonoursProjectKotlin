@@ -5,12 +5,14 @@
       {
         "correct": "Phishing",
         "options": ["Phishing", "Malware", "Spyware", "Ransomware"],
-        "question": "What cyber attack involves tricking individuals into disclosing sensitive information?"
+        "question": "What cyber attack involves tricking individuals into disclosing sensitive information?",
+        "feedback": "Phishing deceives users into providing confidential information, typically via fake emails or websites."
       },
       {
         "correct": "Firewall",
         "options": ["Antivirus", "Firewall", "VPN", "Encryption"],
-        "question": "What network security system monitors and controls incoming and outgoing network traffic?"
+        "question": "What network security system monitors and controls incoming and outgoing network traffic?",
+        "feedback": "A firewall filters network traffic to protect against unauthorized access and potential threats."
       }
     ],
     "subtitle": "Cyber Attack Types",
@@ -23,12 +25,14 @@
       {
         "correct": "Encryption",
         "options": ["Encryption", "Hashing", "Tokenization", "Compression"],
-        "question": "What technique secures data by converting it into a coded format?"
+        "question": "What technique secures data by converting it into a coded format?",
+        "feedback": "Encryption transforms data into a code to prevent unauthorized access and ensure privacy."
       },
       {
         "correct": "Two-Factor Authentication",
         "options": ["Password Protection", "Two-Factor Authentication", "Biometrics", "Single Sign-On"],
-        "question": "Which security measure requires two forms of identification?"
+        "question": "Which security measure requires two forms of identification?",
+        "feedback": "Two-Factor Authentication adds an extra layer of security by requiring two types of verification."
       }
     ],
     "subtitle": "Basic Security Concepts",
@@ -41,22 +45,26 @@
       {
         "correct": "VPN",
         "options": ["VPN", "Proxy Server", "Firewall", "Antivirus"],
-        "question": "What technology creates a secure connection over a less secure network?"
+        "question": "What technology creates a secure connection over a less secure network?",
+        "feedback": "A VPN encrypts data and secures connections over unsecured networks like the internet."
       },
       {
         "correct": "DDoS Attack",
         "options": ["Phishing Attack", "DDoS Attack", "SQL Injection", "Man-in-the-Middle Attack"],
-        "question": "What attack overwhelms a server with internet traffic?"
+        "question": "What attack overwhelms a server with internet traffic?",
+        "feedback": "A DDoS attack floods a server with excessive traffic to disrupt its normal operation."
       },
       {
         "correct": "SQL Injection",
         "options": ["SQL Injection", "Cross-Site Scripting", "Buffer Overflow", "Brute Force Attack"],
-        "question": "What vulnerability allows attackers to execute arbitrary SQL code?"
+        "question": "What vulnerability allows attackers to execute arbitrary SQL code?",
+        "feedback": "SQL Injection lets attackers run malicious SQL queries to manipulate or access a database."
       },
       {
         "correct": "Penetration Testing",
         "options": ["Penetration Testing", "Vulnerability Scanning", "Social Engineering", "Incident Response"],
-        "question": "What process tests a system to find security vulnerabilities?"
+        "question": "What process tests a system to find security vulnerabilities?",
+        "feedback": "Penetration Testing involves simulating attacks to identify and address system weaknesses."
       }
     ],
     "subtitle": "Cyber Attack Methods",
@@ -69,27 +77,32 @@
       {
         "correct": "Ransomware",
         "options": ["Adware", "Ransomware", "Trojan", "Worm"],
-        "question": "What malware encrypts files and demands a ransom?"
+        "question": "What malware encrypts files and demands a ransom?",
+        "feedback": "Ransomware locks files and demands payment for their release, causing significant disruptions."
       },
       {
         "correct": "Social Engineering",
         "options": ["Social Engineering", "Phishing", "Malware", "Spyware"],
-        "question": "What method manipulates individuals into divulging confidential information?"
+        "question": "What method manipulates individuals into divulging confidential information?",
+        "feedback": "Social Engineering exploits human psychology to trick individuals into revealing sensitive data."
       },
       {
         "correct": "Zero-Day Exploit",
         "options": ["Zero-Day Exploit", "Cross-Site Scripting", "Denial of Service", "Privilege Escalation"],
-        "question": "What attack exploits a vulnerability before it is patched?"
+        "question": "What attack exploits a vulnerability before it is patched?",
+        "feedback": "A Zero-Day Exploit targets unpatched vulnerabilities, making it a significant security threat."
       },
       {
         "correct": "Malware",
         "options": ["Malware", "Phishing", "Spam", "Adware"],
-        "question": "What is malicious software designed to harm a system?"
+        "question": "What is malicious software designed to harm a system?",
+        "feedback": "Malware encompasses various malicious software types aimed at damaging or compromising systems."
       },
       {
         "correct": "Ethical Hacking",
         "options": ["Penetration Testing", "Ethical Hacking", "Black Hat Hacking", "White Hat Hacking"],
-        "question": "What practice probes systems to improve security?"
+        "question": "What practice probes systems to improve security?",
+        "feedback": "Ethical Hacking involves authorized testing to find and fix security vulnerabilities."
       }
     ],
     "subtitle": "Cybersecurity Practices",
@@ -102,27 +115,32 @@
       {
         "correct": "Brute Force Attack",
         "options": ["Brute Force Attack", "Phishing Attack", "Man-in-the-Middle Attack", "Social Engineering"],
-        "question": "What attack involves trying every possible password?"
+        "question": "What attack involves trying every possible password?",
+        "feedback": "A Brute Force Attack systematically tries all possible passwords until the correct one is found."
       },
       {
         "correct": "Public Key Infrastructure",
         "options": ["Public Key Infrastructure", "Private Key Encryption", "Symmetric Key Encryption", "Token Authentication"],
-        "question": "What system manages digital certificates and public-key encryption?"
+        "question": "What system manages digital certificates and public-key encryption?",
+        "feedback": "Public Key Infrastructure provides a framework for managing digital certificates and public-key encryption."
       },
       {
         "correct": "Man-in-the-Middle Attack",
         "options": ["Man-in-the-Middle Attack", "SQL Injection", "Cross-Site Scripting", "Denial of Service"],
-        "question": "What attack intercepts and alters communication between parties?"
+        "question": "What attack intercepts and alters communication between parties?",
+        "feedback": "A Man-in-the-Middle Attack intercepts and manipulates data exchanged between two parties."
       },
       {
         "correct": "Network Segmentation",
         "options": ["Network Segmentation", "Network Isolation", "Network Encryption", "Network Monitoring"],
-        "question": "What practice divides a network into segments to control traffic?"
+        "question": "What practice divides a network into segments to control traffic?",
+        "feedback": "Network Segmentation limits access and traffic within parts of a network to improve security."
       },
       {
         "correct": "Two-Factor Authentication",
         "options": ["Single Sign-On", "Two-Factor Authentication", "Multi-Factor Authentication", "Biometric Authentication"],
-        "question": "What security measure requires two forms of identification?"
+        "question": "What security measure requires two forms of identification?",
+        "feedback": "Two-Factor Authentication strengthens security by combining two different methods of verification."
       }
     ],
     "subtitle": "Cybersecurity Essentials",
