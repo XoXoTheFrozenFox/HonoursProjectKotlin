@@ -15,7 +15,7 @@
 </div>
 <h3 align="center">Questions form</h3>
 <div align="center">
-<img src="https://github.com/user-attachments/assets/5fa1b0a5-2cb2-4ff8-9c29-fdcbaca026f3" alt="Image" />
+<img src="https://github.com/user-attachments/assets/e66c94dd-45ef-48a1-ba25-8e4999b2a0fa" alt="Image" />
 </div>
 <h3 align="center">Result form</h3>
 <div align="center">
