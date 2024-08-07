@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import np.com.bimalkafle.quizonline.databinding.ActivityQuizBinding
 import np.com.bimalkafle.quizonline.databinding.ScoreDialogBinding
 
@@ -28,6 +29,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = ActivityQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

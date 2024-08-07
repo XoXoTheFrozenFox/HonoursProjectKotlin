@@ -2,7 +2,10 @@ package np.com.bimalkafle.quizonline
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.SystemClock
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.FirebaseDatabase
@@ -12,9 +15,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var quizModelList: MutableList<QuizModel>
     private lateinit var adapter: QuizListAdapter
+    private var backPressedTime: Long = 0
+    private val doubleBackToExitInterval: Long = 2000 // 2 seconds
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -23,8 +29,21 @@ class MainActivity : AppCompatActivity() {
         getDataFromFirebase()
         setupBottomNavigationView()
 
-        // Default activity to launch
-        launchMainActivity()
+        // Register OnBackPressedDispatcher callback to handle back press
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val currentTime = SystemClock.elapsedRealtime()
+                if (currentTime - backPressedTime < doubleBackToExitInterval) {
+                    // Minimize the app and go to the home screen
+                    moveTaskToBack(true)
+                } else {
+                    // Update the back pressed time and optionally show a Toast message
+                    backPressedTime = currentTime
+                    // Optionally, show a Toast message to indicate double press
+                    // Toast.makeText(this@MainActivity, "Press back again to minimize", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
 
     private fun setupRecyclerView() {
@@ -54,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_a -> {
-                    launchMainActivity()
+                    // Do nothing since this is the current activity
                     true
                 }
                 R.id.nav_b -> {
@@ -68,10 +87,6 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-    }
-
-    private fun launchMainActivity() {
-        // MainActivity is already the current activity, no need to launch it again
     }
 
     private fun launchForm2() {
