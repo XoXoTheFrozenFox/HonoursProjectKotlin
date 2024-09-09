@@ -29,6 +29,6 @@
 <h2 align="center">⚒️ Technologies used ⚒️</h2>
 <br/>
 <div align="center">
-    <img src="https://skillicons.dev/icons?i=kotlin,androidstudio,firebase,github,latex" />   
+    <img src="https://skillicons.dev/icons?i=kotlin,androidstudio,firebase,github" />   
 </div>
 
