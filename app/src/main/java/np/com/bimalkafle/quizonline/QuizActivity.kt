@@ -83,6 +83,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             feedbackTextview.text = "" // Clear feedback on new question
         }
 
+        // Reset selected answer and button colors
+        selectedAnswer = ""
         isAnswerLocked = false
         resetButtonColors()
     }
@@ -111,9 +113,10 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             highlightCorrectAnswer()
         }
 
+        // Proceed to the next question and reset selection
         isAnswerLocked = true
         currentQuestionIndex++
-        loadQuestions()
+        loadQuestions()  // This will reset everything for the next question
     }
 
     private fun handleOptionClick(view: View) {

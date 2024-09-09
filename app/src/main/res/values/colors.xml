@@ -7,4 +7,5 @@
     <color name="blue">#83aff0</color>
     <color name="green">#00FF00</color>
     <color name="red">#FF0000</color>
+    <color name="splash_screen_background">#FFFBFE</color>
 </resources>

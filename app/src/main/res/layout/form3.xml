@@ -75,7 +75,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="8dp"
-                android:text="There is a need for the improvement of cybersecurity awareness within HEI"
+                android:text="By assessing cybersecurity awareness and implementing a tailored application, this project seeks to enhance staff vigilance and resilience against cyber threats, ultimately contributing to a safer and more secure environment within HEIs."
                 android:textSize="16sp"
                 android:textColor="@color/black" />
         </LinearLayout>

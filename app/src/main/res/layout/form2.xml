@@ -63,7 +63,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
-        android:text="There is a need for the improvement of cybersecurity awareness within HEI"
+        android:text="The increasing frequency of cyber threats and the critical role of Higher Education Institutions (HEIs) in managing sensitive data highlight the urgent need to assess and improve staff cybersecurity awareness. This study aims to address this gap by evaluating the current awareness levels and developing targeted solutions to bolster defenses against cyberattacks."
         android:textSize="16sp"
         android:textColor="@color/black" />
 
